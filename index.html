@@ -15,49 +15,53 @@
     <title>Odin Library APP</title>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <img class="book-logo" src="img/book-logo.png" />
-        <div class="header-text">
-          <h1>Your Library</h1>
-          <p>Reading Vibes Only</p>
-        </div>
-      </header>
+    <header>
+      <div class="profile">
+        <p>Welcome Back,</p>
+        <img class="avatar" src="img/avatar.jpg" />
+      </div>
+    </header>
 
-      <main>
-        <div class="form-container">
-          <form class="book-form" action="" method="get">
-            <div class="input">
-              <label for="title">Title</label>
-              <input type="text" name="title" id="title" required />
-            </div>
-            <div class="input">
-              <label for="author">Author</label>
-              <input type="text" name="author" id="author" required />
-            </div>
-            <input class="add-button" type="submit" value="Add Book" />
-          </form>
-        </div>
-        <div class="library-container">
-          <div class="card">
-            <div class="card-title">
-              <p>Title</p>
-              <p>Your Title Here</p>
-            </div>
-            <div class="card-author">
-              <p>Author</p>
-              <p>Your Author Here</p>
-            </div>
-            <button class="read">Read</button>
-            <button class="delete">Delete</button>
+    <main>
+      <div class="form-container">
+        <form class="book-form" action="" method="get">
+          <div class="input title-input">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required />
           </div>
+          <div class="input author-input">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" required />
+          </div>
+          <button class="add-button" type="submit">Add Book</button>
+        </form>
+      </div>
+      <div class="library-container">
+        <div class="card">
+          <div class="card-title">
+            <p>Title</p>
+            <p class="display-title">Your Title Here</p>
+          </div>
+          <div class="card-author">
+            <p>Author</p>
+            <p class="display-author">Your Author Here</p>
+          </div>
+          <div class="read">
+            <label class="toggle">
+              <input class="toggle-checkbox" type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+            <p class="text-toggle">Read</p>
+          </div>
+          <button class="delete"><img src="img/delete.svg" /></button>
         </div>
-      </main>
+      </div>
+    </main>
 
-      <footer>
-        <p>The Odin Project</p>
-        <p>Library App by Ekaterina Furman</p>
-      </footer>
-    </div>
+    <footer>
+      <p>The Odin Project</p>
+      <img src="img/lux-logo.png" />
+      <p>Library App by Ekaterina Furman</p>
+    </footer>
   </body>
 </html>
