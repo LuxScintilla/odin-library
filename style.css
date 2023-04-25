@@ -84,7 +84,7 @@ main::before {
   transform: rotate(-90deg);
   opacity: 25%;
   top: 40%;
-  left: -300px;
+  left: -375px;
   color: var(--dark-clr);
   font-size: 10rem;
   font-weight: 800;
@@ -96,7 +96,7 @@ main:after {
   transform: rotate(90deg);
   opacity: 25%;
   top: 40%;
-  right: -425px;
+  right: -500px;
   color: var(--dark-clr);
   font-size: 10rem;
   font-weight: 800;
