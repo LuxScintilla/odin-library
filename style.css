@@ -78,30 +78,6 @@ main {
   grid-template-rows: 100px 1fr;
 }
 
-main::before {
-  position: absolute;
-  content: "YOUR";
-  transform: rotate(-90deg);
-  opacity: 25%;
-  top: 40%;
-  left: -375px;
-  color: var(--dark-clr);
-  font-size: 10rem;
-  font-weight: 800;
-}
-
-main:after {
-  position: absolute;
-  content: "LIBRARY";
-  transform: rotate(90deg);
-  opacity: 25%;
-  top: 40%;
-  right: -500px;
-  color: var(--dark-clr);
-  font-size: 10rem;
-  font-weight: 800;
-}
-
 .form-container {
   padding: 10px 0px 10px 0px;
 }
