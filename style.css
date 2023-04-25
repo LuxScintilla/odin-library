@@ -148,7 +148,7 @@ main:after {
 
 .card {
   display: grid;
-  grid-template-columns: 1fr 1fr 100px 100px;
+  grid-template-columns: 1fr 1fr 150px 50px;
   column-gap: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -164,6 +164,7 @@ main:after {
 .card-author > p:nth-of-type(1) {
   font-weight: 800;
   font-size: 0.8rem;
+  color: var(--dark-clr);
 }
 
 .read {
@@ -175,6 +176,10 @@ main:after {
 
 .text-toggle {
   color: var(--dark-clr);
+}
+
+.book-read {
+  color: var(--green);
 }
 
 .delete {
@@ -241,10 +246,6 @@ main:after {
 
 input:checked + .slider {
   background-color: var(--green);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 2px 1px var(--green);
 }
 
 input:checked + .slider:before {
