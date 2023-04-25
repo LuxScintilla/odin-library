@@ -57,6 +57,10 @@ header::after {
   gap: 10px;
 }
 
+.profile > p {
+  font-weight: 800;
+}
+
 .avatar {
   height: 50px;
   width: 50px;
