@@ -78,6 +78,32 @@ main {
   grid-template-rows: 100px 1fr;
 }
 
+main::before {
+  position: absolute;
+  content: "YOUR";
+  transform: rotate(-90deg);
+  z-index: -1;
+  opacity: 25%;
+  top: 40%;
+  left: -300px;
+  color: var(--dark-clr);
+  font-size: 10rem;
+  font-weight: 800;
+}
+
+main:after {
+  position: absolute;
+  content: "LIBRARY";
+  transform: rotate(90deg);
+  z-index: -1;
+  opacity: 25%;
+  top: 40%;
+  right: -425px;
+  color: var(--dark-clr);
+  font-size: 10rem;
+  font-weight: 800;
+}
+
 .form-container {
   padding: 10px 0px 10px 0px;
 }
@@ -140,8 +166,8 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card-title > p:nth-of-type(1),
-.card-author > p:nth-of-type(1) {
+.title-tag,
+.author-tag {
   font-weight: 800;
   font-size: 0.8rem;
   color: var(--dark-clr);
