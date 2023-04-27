@@ -47,11 +47,47 @@ function createCard() {
   const authorInput = document.createElement("p");
   authorInput.textContent = book.author;
 
+  const toggleContainer = document.createElement("div");
+  toggleContainer.className = "toggle-container";
+  const toggleCheck = document.createElement("input");
+  toggleCheck.setAttribute("type", "checkbox");
+  toggleCheck.setAttribute("name", "checkbox");
+  toggleCheck.className = "check";
+  const toggleLabel = document.createElement("label");
+  toggleLabel.setAttribute("for", "checkbox");
+  toggleLabel.className = "toggle";
+
+  toggleCheck.addEventListener("click", function () {
+    if (toggleCheck.checked) {
+      toggleLabel.textContent = "Read";
+      toggleLabel.style.color = "var(--green)";
+    } else if (toggleCheck.checked === false) {
+      toggleLabel.textContent = "Not Read";
+      toggleLabel.style.color = "var(--dark-clr)";
+    }
+  });
+
+  const deleteButton = document.createElement("button");
+  deleteButton.className = "delete";
+  deleteButton.textContent = "Delete";
+
+  toggleContainer.appendChild(toggleCheck);
+  toggleContainer.appendChild(toggleLabel);
+
   titleContainer.appendChild(titleTag);
   authorContainer.appendChild(authorTag);
+
   titleContainer.appendChild(titleInput);
   authorContainer.appendChild(authorInput);
+
   card.appendChild(titleContainer);
   card.appendChild(authorContainer);
+  card.appendChild(toggleContainer);
+  card.appendChild(deleteButton);
   libraryContainer.appendChild(card);
+
+  deleteButton.addEventListener("click", function () {
+    let removeElement = this.parentNode;
+    libraryContainer.removeChild(removeElement);
+  });
 }
