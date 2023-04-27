@@ -223,3 +223,35 @@ footer {
 footer > img {
   height: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    position: fixed;
+  }
+
+  header {
+    width: 100vw;
+  }
+
+  .book-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 50px);
+    column-gap: 10px;
+  }
+
+  #title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #author {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .add-button {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
