@@ -10,23 +10,36 @@ addButton.addEventListener("click", function (event) {
   inputAuthor.value = "";
 });
 
-let myLibrary = [];
-
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 }
 
-function addBook() {
-  let title = inputTitle.value;
-  let author = inputAuthor.value;
-  let newBook = new Book(title, author);
-  myLibrary.push(newBook);
+class Library {
+  constructor() {
+    this.books = [];
+  }
+  addBook(newBook) {
+    this.books.push(newBook);
+  }
+  removeBook(findBook) {
+    // const index = this.books.findIndex((x) => x.title === findBook);
+    const index = this.books.findIndex(function (book) {
+      return book.title === findBook;
+    });
+    console.log(index);
+    this.books.splice(index, 1);
+  }
 }
+
+const myLibrary = new Library();
 
 function createCard() {
-  addBook();
-  let book = myLibrary[myLibrary.length - 1];
+  const book = new Book(inputTitle.value, inputAuthor.value);
+  myLibrary.addBook(book);
+  console.log(myLibrary.books);
 
   const card = document.createElement("div");
   card.className = "card";
@@ -70,6 +83,7 @@ function createCard() {
   const deleteButton = document.createElement("button");
   deleteButton.className = "delete";
   deleteButton.textContent = "Delete";
+  deleteButton.setAttribute("data-book", book.title);
 
   toggleContainer.appendChild(toggleCheck);
   toggleContainer.appendChild(toggleLabel);
@@ -87,6 +101,8 @@ function createCard() {
   libraryContainer.appendChild(card);
 
   deleteButton.addEventListener("click", function () {
+    myLibrary.removeBook(this.dataset.book);
+    console.log(myLibrary.books);
     let removeElement = this.parentNode;
     libraryContainer.removeChild(removeElement);
   });
